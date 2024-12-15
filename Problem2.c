@@ -1,4 +1,5 @@
-// 
+// By considering the terms in the Fibonacci sequence whose values do not exceed four million,
+// find the sum of the even-valued terms.
 
 #include "MyLibrary.c"
 
@@ -9,13 +10,11 @@ static int	fibbonacciEven(int f1, int f2, int limit)
 	int current = 0;
 
 	current = f1 + f2;
-	f1 = f2;
-	f2 = current;
 	if (isMultiple(current, 2))
 		SUM += current;
 	if (current > limit)
 		return (SUM);
-	fibbonacciEven(f1, f2, limit);
+	fibbonacciEven(f2, current, limit);
 }
 
 int	main (void)
